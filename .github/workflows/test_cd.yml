@@ -19,10 +19,10 @@ jobs:
       id: modified
       run: | 
         echo "modifiedfiles=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
-        echo "modifiedfiles"
+        #echo "modifiedfiles"
         
     - name: Execute Shell Script
       run: |
         echo "$modifiedfiles"
-        chmod +x remote_copy.sh
+        chmod +x ./Scripts/remote_copy.sh
         ./Scripts/remote_copy.sh
