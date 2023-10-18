@@ -8,7 +8,7 @@ jobs:
   buildImage:
     runs-on: ubuntu-latest
     steps:
-    - name: Get changed files
+    - name: Checkout Current Folder
       uses: actions/checkout@v3
       with: 
         repository: Sandeep084b/Demo01
@@ -17,9 +17,9 @@ jobs:
       
     - name: Copy folders from current Repo    
       run: |
-        mkdir -p common-packages
-        cp -r Demo01/AH_Sample common-packages/
-        cp -r Demo01/AH_Test common-packages/
+        mkdir -p Deso-packages
+        cp -r Demo01/AH_Sample Deso-packages/
+        cp -r Demo01/AH_Test Deso-packages/
         pwd
       working-directory: ${{ github.workspace }} 
      
@@ -33,16 +33,12 @@ jobs:
 
     - name: Copy Folders from current Repo
       run: |
-        mkdir -p business-packages
-        cp -r Demo/AH_Demo business-packages/
-        cp -r Demo/AH_Demo_01 business-packages/
+        cp -r Demo/AH_Demo Deso-packages/
+        cp -r Demo/AH_Demo_01 Deso-packages/
         pwd
       working-directory: ${{ github.workspace }} 
       
     - name: check contents from Common Folders
       run: |
-        cd business-packages/
-        ls -l
-        cd ..
-        cd common-packages/
+        cd Deso-packages/
         ls -l
