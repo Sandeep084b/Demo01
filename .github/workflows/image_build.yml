@@ -25,6 +25,6 @@ jobs:
     - name: Copy Folders from another Repo
       run: | 
         mkdir -p common-packages
-        cp -r AH-Demo common-packages/
-        cp -r AH-Demo_01 common-packages/
+        cp -r AH_Demo common-packages/
+        cp -r AH_Demo_01 common-packages/
       working-directory: ${{ github.workspace }} 
