@@ -11,7 +11,8 @@ jobs:
     - name: Get changed files
       uses: actions/checkout@v3
       with: 
-        repository: sandeep084b/Demo01
+        repository: Sandeep084b/Demo01
+        ref: main
         path: Demo01
       
     - name: Copy folders from current Repo    
