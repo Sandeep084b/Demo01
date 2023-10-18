@@ -18,7 +18,7 @@ jobs:
     - name: Check out my other private repo  
       uses: actions/checkout@v3
       with:
-        repository: Sandeep084b/Demo
+        repository: Sandeep084b/Demo01
         token: ${{ secrets.GIT_TOKEN }}
         ref: main
         
@@ -27,4 +27,4 @@ jobs:
         mkdir -p common-packages
         cp -r AH-Demo common-packages/
         cp -r AH-Demo_01 common-packages/
-        
+      working-directory: ${{ github.workspace }} 
