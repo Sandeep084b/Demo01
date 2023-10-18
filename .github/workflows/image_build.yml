@@ -18,7 +18,7 @@ jobs:
         
     - name: Copy folders from current Repo    
       run: |
-        mkir -p common-packages
+        mkdir -p common-packages
         cp -r AH_Sample common-packages/
         cp -r AH_Test common-packages/
         cd common-packages/
