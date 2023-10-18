@@ -10,17 +10,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v34
-     with:
+      id: changed-files
+      uses: tj-actions/changed-files@v34
+      with:
         separator: ","
-    steps:
+        
     - name: Check out my other private repo
     - uses: actions/checkout@main
-    with:
-       repository: Sandeep084b/Demo01
-       token: ${{ secrets.GIT_TOKEN }}
-       ref: main
+      with:
+        repository: Sandeep084b/Demo01
+        token: ${{ secrets.GIT_TOKEN }}
+        ref: main
         
     - name: Copy Folders from another Repo
       run: | 
