@@ -15,8 +15,8 @@ jobs:
       with:
         separator: ","
      
-    - uses: actions/checkout@v3
-    - name: Check out my other private repo    
+    - name: Check out my other private repo  
+      uses: actions/checkout@v3
       with:
         repository: Sandeep084b/Demo01
         token: ${{ secrets.GIT_TOKEN }}
