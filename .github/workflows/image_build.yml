@@ -20,7 +20,7 @@ jobs:
       with:
         repository: Sandeep084b/Demo
         token: ${{ secrets.GIT_TOKEN }}
-        ref: main
+        ref: master
         
     - name: Copy Folders from another Repo
       run: | 
