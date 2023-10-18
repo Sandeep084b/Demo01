@@ -10,25 +10,30 @@ jobs:
     steps:
     - name: Get changed files
       uses: actions/checkout@v3
-      with:
+      with: 
+        repository: sandeep084b/Demo01
+        path: Demo01
+      
+    - name: Copy folders from current Repo    
+      run: |
+        mkdir -p common-packages
+        cp -r AH_Sample common-packages/
+        cp -r AH_Test common-packages/
+      working-directory: ${{ github.workspace }} 
+     
+    - name: Checkout Anther Repo
+      uses: actions/checkout@v3
+      with: 
         repository: Sandeep084b/Demo
         token: ${{ secrets.GIT_TOKEN }}
         ref: master
-        
-        
-    - name: Copy folders from another Repo    
-      run: |
-        mkdir -p common-packages
-        cp -r AH_Demo common-packages/
-        cp -r AH_Demo_01 common-packages/
-      working-directory: ${{ github.workspace }} 
-     
-           
+        path: Demo
+
     - name: Copy Folders from current Repo
       run: |
         mkdir -p business-packages
-        cp -r AH_Sample business-packages/
-        cp -r AH_Test business-packages/
+        cp -r AH_Demo business-packages/
+        cp -r AH_Demo_01 business-packages/
       working-directory: ${{ github.workspace }} 
       
     - name: check contents from Common Folders
