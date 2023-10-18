@@ -34,7 +34,7 @@ jobs:
         
     - name: Copy Folders from another Repo
       run: | 
-        mkdir -p common-packages
+        #mkdir -p common-packages
         cp -r AH_Demo common-packages/
         cp -r AH_Demo_01 common-packages/
         cd common-packages/
