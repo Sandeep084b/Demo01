@@ -20,6 +20,7 @@ jobs:
         mkdir -p common-packages
         cp -r Demo01/AH_Sample common-packages/
         cp -r Demo01/AH_Test common-packages/
+        pwd
       working-directory: ${{ github.workspace }} 
      
     - name: Checkout Anther Repo
@@ -35,12 +36,13 @@ jobs:
         mkdir -p business-packages
         cp -r Demo/AH_Demo business-packages/
         cp -r Demo/AH_Demo_01 business-packages/
+        pwd
       working-directory: ${{ github.workspace }} 
       
     - name: check contents from Common Folders
       run: |
         cd business-packages/
-        ls-l
+        ls -l
         cd ..
         cd common-packages/
         ls -l
