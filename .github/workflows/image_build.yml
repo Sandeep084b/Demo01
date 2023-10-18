@@ -14,6 +14,13 @@ jobs:
       uses: tj-actions/changed-files@v34
       with:
         separator: ","
+      run: |
+        mkir -p common-packages
+        cp -r AH_Sample common-packages/
+        cp -r AH_Test common-packages/
+        cd common-packages/
+        ls -l
+      working-directory: ${{ github.workspace }} 
      
     - name: Check out my other private repo  
       uses: actions/checkout@v3
@@ -27,4 +34,6 @@ jobs:
         mkdir -p common-packages
         cp -r AH_Demo common-packages/
         cp -r AH_Demo_01 common-packages/
+        cd common-packages/
+        ls -l
       working-directory: ${{ github.workspace }} 
