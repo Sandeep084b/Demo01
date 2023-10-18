@@ -14,9 +14,9 @@ jobs:
       uses: tj-actions/changed-files@v34
       with:
         separator: ","
-        
-    - name: Check out my other private repo
-    - uses: actions/checkout@main
+     
+    - uses: actions/checkout@v3
+    - name: Check out my other private repo    
       with:
         repository: Sandeep084b/Demo01
         token: ${{ secrets.GIT_TOKEN }}
