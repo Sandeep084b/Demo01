@@ -11,32 +11,23 @@ jobs:
     - name: Get changed files
       uses: actions/checkout@v3
       with:
-        repository: Sandeep084b/Demo01
+        repository: Sandeep084b/Demo
         token: ${{ secrets.GIT_TOKEN }}
         ref: main
         
         
-    - name: Copy folders from current Repo    
+    - name: Copy folders from another Repo    
       run: |
         mkdir -p common-packages
-        cp -r AH_Sample common-packages/
-        cp -r AH_Test common-packages/
-        cd common-packages/
-        ls -l
-      working-directory: ${{ github.workspace }} 
-     
-    - name: Check out my other private repo  
-      uses: actions/checkout@v3
-      with:
-        repository: Sandeep084b/Demo
-        token: ${{ secrets.GIT_TOKEN }}
-        ref: master
-        
-    - name: Copy Folders from another Repo
-      run: | 
-        #mkdir -p common-packages
         cp -r AH_Demo common-packages/
         cp -r AH_Demo_01 common-packages/
+      working-directory: ${{ github.workspace }} 
+     
+           
+    - name: Copy Folders from current Repo
+      run: | 
+        cp -r AH_Sample common-packages/
+        cp -r AH_Test common-packages/
         cd common-packages/
         ls -l
       working-directory: ${{ github.workspace }} 
