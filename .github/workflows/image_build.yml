@@ -31,10 +31,10 @@ jobs:
         cp -r AH_Test business-packages/
       working-directory: ${{ github.workspace }} 
       
-    -name: check contents from Common Folders
-        run: |
-            cd business-packages/
-            ls-l
-            cd ..
-            cd common-packages/
-            ls -l
+    - name: check contents from Common Folders
+      run: |
+        cd business-packages/
+        ls-l
+        cd ..
+        cd common-packages/
+        ls -l
