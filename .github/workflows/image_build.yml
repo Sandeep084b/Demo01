@@ -18,7 +18,7 @@ jobs:
     - name: Check out my other private repo  
       uses: actions/checkout@v3
       with:
-        repository: Sandeep084b/Demo01
+        repository: Sandeep084b/Demo
         token: ${{ secrets.GIT_TOKEN }}
         ref: main
         
