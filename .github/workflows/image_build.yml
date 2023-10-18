@@ -13,7 +13,7 @@ jobs:
       with:
         repository: Sandeep084b/Demo
         token: ${{ secrets.GIT_TOKEN }}
-        ref: master
+        ref: main
         
         
     - name: Copy folders from another Repo    
@@ -25,9 +25,16 @@ jobs:
      
            
     - name: Copy Folders from current Repo
-      run: | 
-        cp -r AH_Sample common-packages/
-        cp -r AH_Test common-packages/
-        cd common-packages/
-        ls -l
+      run: |
+        mkdir -p business-packages
+        cp -r AH_Sample business-packages/
+        cp -r AH_Test business-packages/
       working-directory: ${{ github.workspace }} 
+      
+    -name: check contents from Common Folders
+        run: |
+            cd business-packages/
+            ls-l
+            cd ..
+            cd common-packages/
+            ls -l
