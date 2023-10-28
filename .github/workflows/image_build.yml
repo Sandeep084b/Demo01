@@ -1,4 +1,4 @@
-# Deploy Packages to test server 
+# Deploy Packages to test sevrer 
 on: 
   push:
     branches: 
@@ -8,6 +8,9 @@ jobs:
   buildImage:
     runs-on: ubuntu-latest
     steps:
+    - name: Setup Docker BuildX
+      uses: docker/setup-buildx-action@v3
+    
     - name: Checkout Current Folder
       uses: actions/checkout@v3
       with: 
@@ -42,9 +45,6 @@ jobs:
       run: |
         cd Deso-packages/
         ls -l
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
         
     - name: Build Docker Image
       working-directory: ${{ github.workspace }}
