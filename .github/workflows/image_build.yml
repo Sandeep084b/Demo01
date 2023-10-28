@@ -51,6 +51,7 @@ jobs:
       run: |
         pwd
         cd Demo01/
+        ls -ltr
         docker build -t my-msr-image .
         
     - name: Push Docker image to Registery
