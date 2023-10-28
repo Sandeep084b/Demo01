@@ -13,7 +13,7 @@ FROM softwareag/webmethods-microservicesruntime:10.15
 
 #COPY --from=build1 /app ./Packages_Repo01
 
-COPY Deso-packages/* /opt/softwareag/IntegrationServer/packages/AH_Demo
+COPY Demo01/Deso-packages/* /opt/softwareag/IntegrationServer/packages/
 
 #COPY Packages_Repo01 opt/softwareag/IntegrationServer/packages
 
