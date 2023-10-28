@@ -44,6 +44,7 @@ jobs:
       run: |
         cd Deso-packages/
         ls -l
+        cd ..
         cd images/
         ls -l
         
