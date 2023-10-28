@@ -1,4 +1,4 @@
-# Deploy Packages to test sevrer 
+# Deploy Packages to test sevrer..
 on: 
   push:
     branches: 
