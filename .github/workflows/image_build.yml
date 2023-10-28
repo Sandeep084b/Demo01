@@ -47,6 +47,7 @@ jobs:
       working-directory: ${{ github.workspace }}
       run: |
         pwd
+        cd Demo01/
         docker build -t my-msr-image .
         
     - name: Copy Packages to MSR Image
