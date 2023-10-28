@@ -46,13 +46,13 @@ jobs:
         ls -l
         cd ..
         cd images/
-        ls -l
+        ls -ltr
         
     - name: Build Docker Image
-      working-directory: images
+      working-directory: images/Scripts
       run: |
         pwd
-        docker build -t my-msr-image Dockerfile
+        docker build -t my-msr-image .
         
     - name: Push Docker image to Registery
       run: |
