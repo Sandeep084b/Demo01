@@ -37,8 +37,8 @@ jobs:
 
     - name: Copy Folders from current Repo
       run: |
-        cp -r Demo/AH_Demo Deso-packages/
-        cp -r Demo/AH_Demo_01 Deso-packages/
+        cp -r Demo/AH_Demo Demo01/Deso-packages/
+        cp -r Demo/AH_Demo_01 Demo01/Deso-packages/
         pwd
       working-directory: ${{ github.workspace }} 
       
