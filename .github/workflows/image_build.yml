@@ -44,7 +44,7 @@ jobs:
       
     - name: check contents from Common Folders
       run: |
-        cd Deso-packages/
+        cd Demo01/Deso-packages/
         ls -l
         
     - name: Build Docker Image
