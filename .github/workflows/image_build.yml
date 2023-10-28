@@ -22,8 +22,8 @@ jobs:
       run: |
         cd Demo01/
         mkdir -p Deso-packages
-        cp -r Demo01/AH_Sample Deso-packages/
-        cp -r Demo01/AH_Test Deso-packages/
+        cp -r AH_Sample Deso-packages/
+        cp -r AH_Test Deso-packages/
         pwd
       working-directory: ${{ github.workspace }} 
      
@@ -37,7 +37,6 @@ jobs:
 
     - name: Copy Folders from current Repo
       run: |
-        cd Demo01/
         cp -r Demo/AH_Demo Deso-packages/
         cp -r Demo/AH_Demo_01 Deso-packages/
         pwd
