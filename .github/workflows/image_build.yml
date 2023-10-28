@@ -46,7 +46,7 @@ jobs:
     - name: Build Docker Image
       working-directory: Demo01/Scripts
       run: |
-        docker build . --file Dockerfile -t my-msr-image
+        docker build -t my-msr-image .
         
     - name: Push Docker image to Registery
       run: |
