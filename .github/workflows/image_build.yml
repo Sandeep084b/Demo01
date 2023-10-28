@@ -20,6 +20,8 @@ jobs:
         mkdir -p Deso-packages
         cp -r Demo01/AH_Sample Deso-packages/
         cp -r Demo01/AH_Test Deso-packages/
+        mkdir -p images
+        cp Demo01/Scripts/Dcokerfile images/
         pwd
       working-directory: ${{ github.workspace }} 
      
@@ -44,7 +46,7 @@ jobs:
         ls -l
         
     - name: Build Docker Image
-      working-directory: ${{ github.workspace }}/Demo01/Scripts
+      working-directory: images
       run: |
         docker build -t my-msr-image .
         
