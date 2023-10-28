@@ -44,7 +44,7 @@ jobs:
         ls -l
         
     - name: Build Docker Image
-      working-directory: ${{ github.workspace }}
+      working-directory: Scripts
       run: |
         docker build . --file Dockerfile -t my-msr-image
         
