@@ -1,6 +1,6 @@
 FROM softwareag/webmethods-microservicesruntime:10.15
 
-RUN cd ..
+#RUN cd ..
 
 RUN cd Deso-packages/
 
