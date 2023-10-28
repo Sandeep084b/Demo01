@@ -1,4 +1,4 @@
-# Deploy Packages to test server
+# Deploy Packages to test server 
 on: 
   push:
     branches: 
@@ -48,16 +48,16 @@ jobs:
         ls -l
         
     - name: Build Docker Image
-      working-directory: ${{ github.workspace }}
-      run: |
-        pwd
-        cd Demo01/
-        ls -ltr
-        docker build -t my-msr-image .
+      uses: docker/login-action@v3 
+      with: 
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASS }}
         
-    - name: Push Docker image to Registery
-      run: |
-        docker tag my-msr-image sandy1101/msr_demo/my-msr-image
-        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }} sandy1101/msr_demo
-        docker push sandy1101/msr_demo/my-msr-image
+        
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        context: Demo01
+        tags: msr_demo/my-msr-image:latest
         
