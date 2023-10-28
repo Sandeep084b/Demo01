@@ -57,7 +57,7 @@ jobs:
         
     - name: Push Docker image to Registery
       run: |
-        docker tag my-msr-image msr_demo/my-msr-image
-        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }} msr_demo
-        docker push msr_demo/my-msr-image
+        docker tag my-msr-image sandy1101/msr_demo/my-msr-image
+        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }} sandy1101/msr_demo
+        docker push sandy1101/msr_demo/my-msr-image
         
