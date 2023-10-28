@@ -42,6 +42,9 @@ jobs:
       run: |
         cd Deso-packages/
         ls -l
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
         
     - name: Build Docker Image
       working-directory: ${{ github.workspace }}
@@ -49,10 +52,6 @@ jobs:
         pwd
         cd Demo01/
         docker build -t my-msr-image .
-        
-    - name: Copy Packages to MSR Image
-      run: |
-        cp -r Deso-packages/* /opt/softwareag/IntegrationServer/packages
         
     - name: Push Docker image to Registery
       run: |
