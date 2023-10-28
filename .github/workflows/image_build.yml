@@ -42,3 +42,17 @@ jobs:
       run: |
         cd Deso-packages/
         ls -l
+        
+    - name: Build Docker Buildx
+      uses: docker/setup-buildx-action@v1
+      
+    - name: Build Docker Image
+      run: |
+        docker build -t my-msr-image .
+        
+    - name: Push Docker image to Registery
+      run: |
+        docker tag my-msr-image msr_demo/my-msr-image
+        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }} msr_demo
+        docker push msr_demo/my-msr-image
+        
