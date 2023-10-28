@@ -21,7 +21,7 @@ jobs:
         cp -r Demo01/AH_Sample Deso-packages/
         cp -r Demo01/AH_Test Deso-packages/
         mkdir -p images
-        cp Demo01/Scripts/Dcokerfile images/
+        cp -r Demo01/Scripts/ images/
         pwd
       working-directory: ${{ github.workspace }} 
      
