@@ -45,14 +45,14 @@ jobs:
         cd Deso-packages/
         ls -l
         cd ..
-        cd images/
+        cd images/Scripts/
         ls -ltr
         
     - name: Build Docker Image
-      working-directory: ${{ github.workspace }}/images/Scripts
+      working-directory: ${{ github.workspace }}
       run: |
         pwd
-        docker build -t my-msr-image .
+        docker build -t my-msr-image images/Scripts/
         
     - name: Push Docker image to Registery
       run: |
