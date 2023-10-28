@@ -56,7 +56,7 @@ jobs:
         ls -ltr
         cd Demo01/
         ls -ltr
-        docker build -t my-msr-image Demo01/
+        docker build -t my-msr-image .
         
     - name: Push Docker image to Registery
       run: |
