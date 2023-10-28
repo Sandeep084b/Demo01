@@ -44,6 +44,8 @@ jobs:
       run: |
         cd Deso-packages/
         ls -l
+        cd images/
+        ls -l
         
     - name: Build Docker Image
       working-directory: images
