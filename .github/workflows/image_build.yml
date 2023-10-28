@@ -54,6 +54,8 @@ jobs:
         pwd
         cd /home/runner/work/Demo01/Demo01
         ls -ltr
+        cd Demo01/
+        ls -ltr
         docker build -t my-msr-image Demo01/
         
     - name: Push Docker image to Registery
