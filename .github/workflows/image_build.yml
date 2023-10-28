@@ -20,8 +20,6 @@ jobs:
         mkdir -p Deso-packages
         cp -r Demo01/AH_Sample Deso-packages/
         cp -r Demo01/AH_Test Deso-packages/
-        mkdir -p images
-        cp -r Demo01/Scripts/ images/
         pwd
       working-directory: ${{ github.workspace }} 
      
@@ -44,19 +42,16 @@ jobs:
       run: |
         cd Deso-packages/
         ls -l
-        cd ..
-        cd images/Scripts/
-        ls -ltr
         
     - name: Build Docker Image
       working-directory: ${{ github.workspace }}
       run: |
         pwd
-        cd /home/runner/work/Demo01/Demo01
-        ls -ltr
-        cd Demo01/
-        ls -ltr
         docker build -t my-msr-image .
+        
+    - name: Copy Packages to MSR Image
+      run: |
+        cp -r Deso-packages/* /opt/softwareag/IntegrationServer/packages
         
     - name: Push Docker image to Registery
       run: |
