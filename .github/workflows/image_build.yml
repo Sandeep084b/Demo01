@@ -30,7 +30,7 @@ jobs:
         pwd
       working-directory: ${{ github.workspace }} 
      
-    - name: Checkout Anther Repo
+    - name: Checkout Another Repo
       uses: actions/checkout@v3
       with: 
         repository: Sandeep084b/Demo
@@ -41,6 +41,7 @@ jobs:
     - name: Copy Folders from Other Repo
       run: |
         pwd
+        ls -ltr
         cd Demo01/
         while IFS= read -r package; do
             cp -r Demo/$package Demo01/Deso-packages/
