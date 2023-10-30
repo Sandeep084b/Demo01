@@ -41,11 +41,10 @@ jobs:
     - name: Copy Folders from Other Repo
       run: |
         pwd
-        ls -ltr
-        cd Demo01/
+        file="Demo01/common-list.txt"
         while IFS= read -r package; do
             cp -r Demo/$package Demo01/Deso-packages/
-        done < Demo01/common-list.txt
+        done < $file
         #cp -r Demo/AH_Demo Demo01/Deso-packages/
         #cp -r Demo/AH_Demo_01 Demo01/Deso-packages/
         pwd
