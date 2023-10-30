@@ -38,10 +38,13 @@ jobs:
         ref: master
         path: Demo
 
-    - name: Copy Folders from current Repo
+    - name: Copy Folders from Other Repo
       run: |
-        cp -r Demo/AH_Demo Demo01/Deso-packages/
-        cp -r Demo/AH_Demo_01 Demo01/Deso-packages/
+        while IFS= read -r package; do
+            cp -r Demo/$package Demo01/Deso-packages/
+        done < common-list.txt
+        #cp -r Demo/AH_Demo Demo01/Deso-packages/
+        #cp -r Demo/AH_Demo_01 Demo01/Deso-packages/
         pwd
       working-directory: ${{ github.workspace }} 
       
