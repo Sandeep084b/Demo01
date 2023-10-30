@@ -22,8 +22,11 @@ jobs:
       run: |
         cd Demo01/
         mkdir -p Deso-packages
-        cp -r AH_Sample Deso-packages/
-        cp -r AH_Test Deso-packages/
+        while IFS= read -r package; do
+            cp -r $package Deso-packages/
+        done < package-list.txt
+        #cp -r AH_Sample Deso-packages/
+        #cp -r AH_Test Deso-packages/
         pwd
       working-directory: ${{ github.workspace }} 
      
